@@ -1,4 +1,4 @@
-package lwh.design.pattern.factory.simple;
+package lwh.design.pattern.factory;
 
 /**
  * 兰州拉面,具体的产品类

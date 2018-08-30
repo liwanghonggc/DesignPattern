@@ -1,4 +1,4 @@
-package lwh.design.pattern.factory.simple;
+package lwh.design.pattern.factory;
 
 /**
  * 抽象一个面条接口,抽象类也可以,这是产品的抽象类

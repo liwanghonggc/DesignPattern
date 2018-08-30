@@ -1,4 +1,4 @@
-package lwh.design.pattern.factory.simple;
+package lwh.design.pattern.factory;
 
 /**
  * 干扣面

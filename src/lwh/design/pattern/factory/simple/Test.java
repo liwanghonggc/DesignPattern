@@ -1,5 +1,7 @@
 package lwh.design.pattern.factory.simple;
 
+import lwh.design.pattern.factory.Noodle;
+
 public class Test {
 
     public static void main(String[] args) {

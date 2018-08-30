@@ -1,5 +1,10 @@
 package lwh.design.pattern.factory.simple;
 
+import lwh.design.pattern.factory.GKNoodle;
+import lwh.design.pattern.factory.LzNoodle;
+import lwh.design.pattern.factory.Noodle;
+import lwh.design.pattern.factory.PaoNoodle;
+
 /**
  * 面条简单工厂类
  */
