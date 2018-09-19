@@ -3,6 +3,9 @@ package lwh.design.pattern.chainofresponsibility;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * FilterChain链
+ */
 public class FilterChain implements Filter {
 
 	List<Filter> filters = new ArrayList<Filter>();
