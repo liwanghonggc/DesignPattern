@@ -1,33 +1,36 @@
 package lwh.design.pattern.ProducerConsumer;
 
-import java.util.concurrent.LinkedBlockingQueue;
-
 /**
  * @author lwh
- * @date 2019-03-01
+ * @date 2019-03-11
  * @desp
  */
 public class Producer extends Thread{
 
-    private LinkedBlockingQueue<Integer> queue;
-    private String name;
-    private volatile int i = 1;
+    Product p;
 
-    public Producer(LinkedBlockingQueue<Integer> queue, String name){
-        this.queue = queue;
-        this.name = name;
+    Producer(Product p){
+        this.p = p;
     }
 
     @Override
     public void run() {
         while (true){
-            try {
-                queue.put(i);
-                System.out.println(name + " Produce value: " + i);
-                i++;
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            synchronized (p){
+                if(!p.flag){
+                    p.name = "苹果";
+                    p.price = 10;
+                    System.out.println("生产者生产了: " + p.name + " 价格是: " + p.price);
+                    p.flag = true;
+                    p.notify();
+                }else {
+                    //已经生产,等待消费者先去消费
+                    try {
+                        p.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }
